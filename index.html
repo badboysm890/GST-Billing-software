@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Badfy - Invoice Kit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Badfy Invoice Kit</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><span>GST %  :</span> <input id="gstPer" placeholder="GST %" value="16"></a>
+      </li> 
+    </ul>
+  </div> 
+  <button onClick="preparePrint()" class="btn btn-danger">Print Invoice</button> 
+  <button onClick="showAddBtn()" class="btn btn-warning ml-2">Edit again</button> 
+  
+</nav>
+<br>
+<div class="container bd">
+   <div class="d-flex justify-content-center">
+     <h4><i>Tax Invoice</i></h4>
+   </div>
+   <div class="d-flex justify-content-center">
+    <h4><strong>NAGARAJAN TEX</strong></h4>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p>13-1-22/1, Malayampalayam, Jalakantapuram Post, Salem DT-636501, Tamil Nadu (33)</p>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p>9789665643</p>
+  </div>
+  <div class="d-flex justify-content-center">
+    <p>GST:33CZIPP4566PIZK , State Code:33</p>
+  </div>
+  <div class="subBdTitle">
+     <div class="row">
+        <div class="col-md-6 w-100 bd">
+          <h6>To,</h6>
+          <a contenteditable>Name</a><br>
+          <a contenteditable>Address-1</a><br>
+          <a contenteditable>Address-2</a><br>
+          <a contenteditable>Dt and Zip</a><br>
+          <a>GSTIN:  <span contenteditable>Unique ID</span></a>
+        </div>
+        <div class="col-md-6 w-100 bd">
+          <h6>Invoice No :<span contenteditable>#1</span></h6>
+          <h6>Date :<span contenteditable>25/2/1999</span></h6>
+        </div>
+     </div>
+  </div>
+  <div class="extras">
+    <div class="row">
+         <div class="col-md-3 bd">
+             <a>Bale No: <span contenteditable>number</span></a>
+         </div>
+         <div class="col-md-3 bd">
+            <a>Lorry: <span contenteditable>number</span></a>
+        </div>
+        <div class="col-md-6 bd">
+            <a>Lr No: <span contenteditable class="w-100">number</span></a>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <a>Goods Booked</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 bd">
+                <a>From: <span contenteditable>25/2/1999</span></a>
+            </div>
+            <div class="col-6 bd">
+                <a>To: <span contenteditable>25/2/1999</span></a>
+            </div>
+        </div>
+      </div>
+      <div class="col-6 bd">
+        <a>Lr Date: <span contenteditable>25/2/1999</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="tabBody">
+    <br>  
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Particulars</th>
+            <th scope="col">HSN Code</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Rate (p.u)</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="tab-main">
+         
+        </tbody>
+        
+      </table>
+      <button class="btn btn-danger mb-2 addItem">add item</button>
+  </div>
+  <div class="bankDetails">
+      <div class="row">
+        <div class="col-8 bd">
+          <div class="row">
+            <div class="col-12">
+               <h5>Bank Details</h5>
+               <h6>Name: <span contenteditable>City Union Bank</span></h6>
+               <h6>A/C No.: <span contenteditable>510909010039772</span></h6>
+               <h6>IFSC: <span contenteditable>CUIB0000232</span></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-4 bd">
+               <a>Less: Discount:</a>
+            </div>
+            <div class="col-4 bd">
+               <span class="discount" contenteditable>0.00</span><span>%</span>
+            </div>
+            <div class="col-4 bd">
+               <span class="dsicount-price">0</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 bd">
+               <span>Sub: Total:</span>
+            </div>
+            <div class="col-4 bd">
+               <!-- <a class="sub" contenteditable>0.00</a><span>%</span> -->
+            </div>
+            <div class="col-4 bd">
+               <span class="sub-price">0.00</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 bd">
+               <span>Add: IGST:</span>
+            </div>
+            <div class="col-4 bd">
+               <!-- <a class="igst" contenteditable>0.00</a><span>%</span> -->
+            </div>
+            <div class="col-4 bd">
+               <span class="igst-price"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 bd">
+               <span>Add: SGST:</span>
+            </div>
+            <div class="col-4 bd">
+               <span class="sgst" contenteditable>0</span><span>%</span>
+            </div>
+            <div class="col-4 bd">
+               <span class="sgst-price">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="terms">
+     <div class="row">
+         <div class="col-8 bd">
+            <h6>Terms and Condtions</h6>
+         </div>
+         <div class="col-4 bd">
+            <div class="row"> 
+              <div class="col-4 bd">
+                  <h6>Add:CGST</h6>
+              </div>
+              <div class="col-4 bd">
+                  <span contenteditable class="cgst">0</span><span>%</span>
+              </div>
+              <div class="col-4 bd">
+                  <span class="cgst-price">0</span>
+              </div>
+            </div>
+         </div>
+     </div>
+
+  </div>
+  <div class="termsBody">
+       <div class="row">
+             <div class="col-8 bd">
+                 <ol>
+                  <li>Goods Once Sold cannot be taken back</li>
+                  <li>Our Weightment is final</li>
+                 </ol>
+             </div>
+             <div class="col-4">
+                 <div class="row">
+                     <div class="col-6 bd">
+                       <h6>Round Off:</h6>
+                     </div>
+                     <div class="col-6 bd">
+                       <span class="roundOff">0.00</span>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-6 bd">
+                     <h5>Net Total</h5>
+                     </div>
+                     <div class="col-6 bd">
+                        <h5><span class="netTotal">0</span></h5>
+                     </div>
+                 </div>
+             </div>
+       </div>
+  </div>
+  <div class="footerList">
+     <div class="row">
+       <div class="col-6 bd">
+           <strong><h5 class="totalText">Ruppees Zero Only</h5></strong>
+       </div>
+       <div class="col-6 bd">
+           <span class="Signature">For NAGARAJAN TEX</span>
+           <br>
+           <br>
+           <br>
+           <br>
+           <span>Authorized Signature</span>
+       </div>
+     </div>   
+  </div>
+
+</div>
+<br>
+<br>
+<script src="script.js"></script>
+</body>
+</html>
+
+

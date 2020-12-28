@@ -1,0 +1,37 @@
+.bd {
+    border-style: solid;
+    border-width: 1px;
+}
+
+[contenteditable]:hover, [contenteditable]:focus,
+input:hover,
+input:focus {
+  background: rgba(241, 76, 76, 0.1);
+  outline: 2px solid #F14C4C;
+}
+
+.control {
+    /* display: inline-block; */
+    color: white;
+    background: #F14C4C;
+    padding: 3px 7px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+ .removeRow .control:hover {
+    background: #f36464;
+    display: block !important;
+}
+
+.removeRow {
+    /* display: none; */
+    /* position: absolute; */
+    top: 0.1rem;
+    bottom: 0.1rem;
+    left: -1.3rem;
+    font-size: 0.7rem;
+    border-radius: 3px 0 0 3px;
+    padding: 0.5rem;
+  }
